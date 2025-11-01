@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONG Vínculo de Amor - SPA</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <img src="imagens/logo_vinculo-de-amor.png" alt="Logotipo da ONG" width="120">
+    <h1>ONG Vínculo de Amor</h1>
+
+    <nav>
+      <ul>
+        <li><a href="#/" class="nav-link">Início</a></li>
+        <li class="has-dropdown">
+          <a href="#/projetos" class="nav-link">Projetos ▾</a>
+          <ul class="dropdown">
+            <li><a href="#/resgate" class="nav-link">Resgate</a></li>
+            <li><a href="#/reabilitacao" class="nav-link">Reabilitação</a></li>
+            <li><a href="#/novo-lar" class="nav-link">Novo Lar</a></li>
+            <li><a href="#/educacao" class="nav-link">Educação e Conscientização</a></li>
+          </ul>
+        </li>
+        <li><a href="#/cadastro" class="nav-link">Seja um Voluntário</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Onde o JS vai renderizar as páginas -->
+  <main id="app"></main>
+
+  <footer>
+    <p>&copy;2025 ONG Vínculo de Amor. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
