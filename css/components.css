@@ -10,14 +10,8 @@ button, .btn {
   transition: background 0.2s ease-in-out;
 }
 
-button:hover, .btn:hover {
-  background: var(--color-primary-light);
-}
-
-button:disabled {
-  background: var(--color-neutral-300);
-  cursor: not-allowed;
-}
+button:hover, .btn:hover { background: var(--color-primary-light); }
+button:disabled { background: var(--color-neutral-300); cursor: not-allowed; }
 
 /* ===== CARDS ===== */
 .card {
@@ -29,11 +23,7 @@ button:disabled {
 }
 
 /* ===== FORMULÁRIOS ===== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-16);
-}
+form { display: flex; flex-direction: column; gap: var(--sp-16); }
 
 fieldset {
   border: 1px solid var(--color-neutral-300);
@@ -42,11 +32,7 @@ fieldset {
   background: var(--color-neutral-100);
 }
 
-legend {
-  padding: 0 var(--sp-8);
-  font-weight: bold;
-  color: var(--color-primary-dark);
-}
+legend { padding: 0 var(--sp-8); font-weight: bold; color: var(--color-primary-dark); }
 
 label {
   display: block;
@@ -66,13 +52,8 @@ input, textarea, select {
   box-sizing: border-box;
 }
 
-textarea {
-  resize: vertical;
-}
-
-input:focus, textarea:focus {
-  outline: 2px solid var(--color-primary);
-}
+textarea { resize: vertical; }
+input:focus, textarea:focus { outline: 2px solid var(--color-primary); }
 
 /* ===== ALERTAS E FEEDBACK ===== */
 .alert {
@@ -83,17 +64,67 @@ input:focus, textarea:focus {
   margin-bottom: var(--sp-16);
 }
 
+/* ===== NAVEGAÇÃO / DROPDOWN ===== */
+.nav-link {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link:hover,
+.nav-link:focus { background: var(--color-neutral-200); }
+
+.has-dropdown { position: relative; }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  margin-top: 8px;
+  padding: 8px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  z-index: 50;
+}
+
+/* mantém o submenu aberto enquanto o mouse está nele */
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown { display: block; }
+
+.dropdown a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.dropdown a:hover,
+.dropdown a:focus { background: var(--color-neutral-200); }
+
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .card {
-    padding: var(--sp-16);
+  .card { padding: var(--sp-16); }
+  fieldset { padding: var(--sp-16); }
+  input, textarea, select { width: 100%; }
+
+  /* dropdown no mobile aparece empilhado (sem posição absoluta) */
+  .dropdown {
+    position: static;
+    display: none;
+    border: none;
+    box-shadow: none;
+    padding-left: 12px;
+    margin-top: 4px;
   }
 
-  fieldset {
-    padding: var(--sp-16);
-  }
-
-  input, textarea, select {
-    width: 100%;
-  }
+  /* se quiser abrir no toque, pode adicionar classe .open via JS */
+  .has-dropdown.open .dropdown { display: block; }
 }
